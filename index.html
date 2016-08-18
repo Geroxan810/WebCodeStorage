@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap-theme.min.css">
+    <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css" media="screen" title="no title">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="KEYWORDS,KEYWORDS" />
+    <title>WebCodeStorige</title>
+  </head>
+<body>
+  <div class="wrap">
+    <h1 class="mainTitle">Web code storage</h1>
+    <div class="navcontainer">
+      <ul>
+        <li><a href="submenu/colorToImage/index.html">color</a></li>
+        <li><a href="submenu/links/index.html">Links</a></li>
+        <li><a href="submenu/Grunt/index.html">Grunt</a></li>
+      </ul>
+    </div>
+<div class="col-md-3 fixed">
+<div class="mainMenu">
+  <ul>
+    <li><a href="#head">head</a></li>
+    <li><a href="#menu">menu</a></li>
+    <li><a href="#bigImageSlider">big image, slider</a></li>
+    <li><a href="#">columns</a></li>
+    <li><a href="#">form</a></li>
+    <li><a href="#">seznam</a></li>
+    <li><a href="#">seznam</a></li>
+    <li><a href="#">footer</a></li>
+    <li><a href="#">other</a></li>
+  </ul>
+</div>
+</div>
+<div class="col-md-9">
+  <div id="head">
+    <h2>head</h2>
+      <h4>basic web html skeleton</h4>
+        <div class="code">
+        <code>
+          &lt;!DOCTYPE html&gt;<br>
+          &lt;html&gt;<br>
+            &lt;head&gt;<br>
+              &lt;meta charset="utf-8"&gt;<br>
+              &lt;link rel="stylesheet" href="style.css" media="screen" title="no title"&gt;<br>
+              &lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"&gt;<br>
+              &lt;title&gt;Website by Ales Mraz&lt;/title&gt;<br>
+              &lt;meta name="description" content="description about your page" /&gt;<br>
+              &lt;meta name="author" content="Ales Mraz" /&gt;<br>
+            &lt;/head&gt;<br>
+            &lt;body&gt;<br>
+            &lt;/body&gt;<br>
+            &lt;/html&gt;<br>
+        </code>
+      </div>
+  </div>
+
+  <div id="menu">
+    <h2>menu</h2>
+      <div class="row">
+        <div class="col-md-6"><span>horizontal without logo</span>
+          <div class="code">
+            <code>
+              &lt;head&gt; &lt;style&gt; ul { list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color: #333; } li { float: left; } li a { display: inline-block; color: white; text-align: center; padding: 14px 16px; text-decoration: none; } &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;ul&gt; &lt;li&gt;&lt;a class=&quot;active&quot; href=&quot;#home&quot;&gt;Home&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#news&quot;&gt;News&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/body&gt; &lt;/html&gt;
+            </code>
+            <div><a href="http://codepen.io/Geroxan/pen/ezmxaK" target="_blank">codepen</a></div>
+          </div>
+        </div>
+        <div class="col-md-6"><span>vertical without logo</span>
+          <div class="code">
+            <code>
+              &lt;head&gt; &lt;style&gt; ul { list-style-type: none; margin: 0; padding: 0; width: 200px; background-color: #f1f1f1; } li a { display: block; color: #000; padding: 8px 0 8px 16px; text-decoration: none; } li a:hover { background-color: #555; color: white; } &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;h2&gt;Vertical Navigation Bar&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#home&quot;&gt;Home&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#news&quot;&gt;News&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/body&gt;
+            </code>
+            <div><a href="http://codepen.io/Geroxan/pen/OXyyNN" target="_blank">codepen</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6"><span>horizontal with logo</span>
+          <div class="code">
+            <code>
+              &lt;style&gt; .logo-box { float: left; } .logo { margin: 0; height: 70px; text-align: center; } ul { margin: 0; margin-right: 25px; padding-left: 0; list-style: none; float: right; height: 70px; line-height: 70px; text-align: center; } a { text-decoration: none; display: inline-block; position: relative; } li a { color: #585858; text-transform: uppercase; text-decoration: none; } li { display: inline-block; margin-left: 25px; } &lt;/style&gt; &lt;nav&gt; &lt;div class=&quot;logo-box&quot;&gt; &lt;h1 class=&quot;logo&quot;&gt; &lt;a href=&quot;/&quot;&gt; &lt;img src=&quot;&quot; alt=&quot;logo&quot;&gt;&lt;/img&gt; &lt;/a&gt; &lt;/h1&gt; &lt;/div&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#&quot;&gt;1&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot;&gt;2&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot;&gt;3&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot;&gt;4&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/nav&gt;
+            </code>
+            <div><a href="http://codepen.io/Geroxan/pen/WxQQxp" target="_blank">codepen</a></div>
+          </div>
+        </div>
+        <div class="col-md-6"><span>vertical with logo</span>
+          <div class="code">
+            <code>
+              &lt;style&gt; ul { list-style-type: none; margin: 0; padding: 0; width: 200px; background-color: #f1f1f1; } li a { text-align:center; display: block; color: #000; padding: 8px 0 8px; text-decoration: none; } li a.active { background-color: #4CAF50; color: white; } li a:hover:not(.active) { background-color: #555; color: white; } li a img{ max-width:100px } &lt;/style&gt; &lt;h2&gt;Vertical Navigation Bar&lt;/h2&gt; &lt;p&gt;In this example, we create an &quot;active&quot; class with a green background color and a white text. The class is added to the &quot;Home&quot; link.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;a&gt;&lt;img src=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a class=&quot;active&quot; href=&quot;#home&quot;&gt;Home&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#news&quot;&gt;News&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt;
+            </code>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div id="bigImageSlider">
+    <h2>fullScreenImage</h2>
+      <div class="code">
+        <code>
+      &lt;style&gt; header { height: 100vh; background-image: url(photo.jpg); background-size: cover; background-position: center; margin-bottom: 25px; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; text-align: center; } header h1{ max-width: 100%; font-size: 4em; padding-right: 15%; padding-left: 15%; border: 2px solid black; padding-top: 1%; padding-bottom: 1% } .arrow{ position: absolute; bottom: 10px; max-width: 40px; animation: jump 2s ease 0s infinite normal; } &lt;/style&gt; &lt;header&gt; &lt;h1&gt;Header&lt;/h1&gt; &lt;a href=&quot;#content&quot;&gt;&lt;img src=&quot;sharp.svg&quot; alt=&quot;button down&quot; class=&quot;arrow&quot;&gt;&lt;/a&gt; &lt;/header&gt;
+      </code>
+      </div>
+  </div>
+
+<h4>BigImage-NOfullScreen</h4>
+  <div class="code">
+    <code>
+      &lt;style&gt; #content { position: relative; height: 410px; background-image: url(images/background.jpg); background-size: auto 600px; background-position: top center; overflow: hidden; background-repeat: no-repeat; } .blueText { font-size: 25px; color: #0196fd } #centerText { height: 100px; width: 100%; text-align: center; background-repeat: no-repeat; position: absolute; top: 32%; margin-top: -52px; font-size: 20px } #blueCont { padding-top: .2em; color: #0196fd; font-size: 1.2em } .bluesub { font-size: 2.6em } .butn { -webkit-border-radius: 10; -moz-border-radius: 10; border-radius: 7px; font-family: Arial; color: #ffffff; font-size: 24px; background: #e6007d; padding: 15px 38px 15px 38px; text-decoration: none; margin-right: 30px } .butn:hover { background: #c2006b; text-decoration: none; color: #ffffff; } .centerButt { margin-top: 75px; margin-left: 60px } .containers { margin-top: 3.5%; padding: 0; margin-right: 12%; margin-left: 14.5% } &lt;/style&gt; &lt;div id=&quot;content&quot;&gt; &lt;div id=&quot;centerText&quot;&gt; &lt;span class=&quot;bluesub&quot;&gt;Vytiskneme na textil cokoliv!&lt;/span&gt; &lt;div id=&quot;blueCont&quot;&gt; Tiskneme na trička, ta&scaron;ky, dresy,... &lt;/div&gt; &lt;div class=&quot;centerButt&quot;&gt; &lt;a href=&quot;#preview&quot; class=&quot;butn&quot;&gt;Uk&aacute;zky tisku&lt;/a&gt; &lt;a href=&quot;#form&quot; class=&quot;butn&quot;&gt;Zadat popt&aacute;vku&lt;/a&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;
+  </code>
+
+  <div class="code">
+    <code>
+
+    </code>
+  </div>
+</div>
+  <div id="columns">
+    <h1>webResponsive</h1>
+      <h2 class="link"><a href="http://www.responsivegridsystem.com/calculator/" target="_blank">Web</a></h2>
+      <h4>2col</h4>
+      <div class="code">
+          <code>
+            .section { clear: both; padding: 0px; margin: 0px; } .col { display: block; float:left; margin: 1% 0 1% 1.6%; } .col:first-child { margin-left: 0; } .group:before, .group:after { content:&quot;&quot;; display:table; } .group:after { clear:both;} .group { zoom:1;} .span_2_of_2 { width: 100%; } .span_1_of_2 { width: 49.2%; } @media only screen and (max-width: 480px) { .col { margin: 1% 0 1% 0%; } } @media only screen and (max-width: 480px) { .span_2_of_2, .span_1_of_2 { width: 100%; } } &lt;div class=&quot;section group&quot;&gt; &lt;div class=&quot;col span_1_of_2&quot;&gt; This is column 1 &lt;/div&gt; &lt;div class=&quot;col span_1_of_2&quot;&gt; This is column 2 &lt;/div&gt; &lt;/div&gt;
+          </code>
+      </div>
+      <h4>4col</h4>
+      <div class="code">
+        <code>
+          &lt;style&gt; .section { clear: both; padding: 0px; margin: 0px; } .col { display: block; float:left; margin: 1% 0 1% 1.6%; } .col:first-child { margin-left: 0; } .group:before, .group:after { content:&quot;&quot;; display:table; } .group:after { clear:both;} .group { zoom:1; } .span_4_of_4 { width: 100%; } .span_3_of_4 { width: 74.6%; } .span_2_of_4 { width: 49.2%; } .span_1_of_4 { width: 23.8%; } @media only screen and (max-width: 480px) { .col { margin: 1% 0 1% 0%; } .span_1_of_4, .span_2_of_4, .span_3_of_4, .span_4_of_4 { width: 100%; } } &lt;/style&gt; &lt;div class=&quot;section group&quot;&gt; &lt;div class=&quot;col span_1_of_4&quot;&gt; 1 of 4 &lt;/div&gt; &lt;div class=&quot;col span_1_of_4&quot;&gt; 1 of 4 &lt;/div&gt; &lt;div class=&quot;col span_1_of_4&quot;&gt; 1 of 4 &lt;/div&gt; &lt;div class=&quot;col span_1_of_4&quot;&gt; 1 of 4 &lt;/div&gt; &lt;/div&gt;
+        </code>
+      </div>
+        <span><a href="http://getbootstrap.com/css/#grid" target="_blank" class="link">bootstrap grid</a></span>
+  </div>
+
+</div>
+</div>
+</div>
+</body>

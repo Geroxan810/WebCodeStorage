@@ -1,0 +1,104 @@
+<head>
+    <meta charset="utf-8">
+  </head>
+<style media="screen">
+  div{
+  padding-left: 20%
+  }
+  .backButton{
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    text-align: center;
+    line-height: 45px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    background-color: lightgrey;
+    font-size: 3em;
+    padding: 0
+  }
+</style>
+<a href="../../index.html"><div class="backButton">«</div></a>
+<div>
+<a href="http://stackoverflow.com/questions/15703598/how-to-install-grunt-and-how-to-built-script-with-it">Main source - web</a><br>
+<a href="gruntjs.pdf">PDF</a><br><br>
+Step by step
+<ul>
+  cmd
+  <li>npm init</li>
+  <li>npm install -g grunt-cli</li>
+  <li>npm install grunt --save-dev</li>
+  <li>npm install grunt-contrib-sass grunt-contrib-watch grunt-contrib-connect --save-dev</li>
+  <li>create Gruntfile.js - * text.txt [empty] > Gruntfile.js [empty]</li><br>
+  to Gruntfile.js > <br> <br>
+
+<code>
+  module.exports = function(grunt) {<br>
+
+      grunt.initConfig({<br>
+          connect: {<br>
+              options: {<br>
+                  port: 9000,<br>
+                  //port on which we want our server to run<br>
+                  base: 'public',<br>
+                  //directory for our index.html file<br>
+                  livereload: 35729<br>
+                      //set livereload port to 35729 to work with 'watch' task<br>
+              },<br>
+              start: {<br>
+                  //we will use this 'start' target to run our server<br>
+                  options: {<br>
+                      open: true,<br>
+                      //by setting this to true, the connect task will automatically open our browser to localhost:9000<br>
+                  }<br>
+              }<br>
+          },<br>
+          watch: {<br>
+              livereload: {<br>
+                  options: {<br>
+                      livereload: '<%= connect.options.livereload %>'<br>
+                          //this enables livereload on port 9000<br>
+                  },<br>
+                  files: [<br>
+                      'public/index.html',<br>
+                      'public/css/main.css'<br>
+                  ]<br>
+              },<br>
+              sass: {<br>
+                  files: 'public/sass/main.scss',<br>
+                  tasks: ['sass']<br>
+              }<br>
+          },<br>
+          sass: {<br>
+              dist: {<br>
+                  options: {<br>
+                      sourcemap: 'none'<br>
+                  },<br>
+                  files: {<br>
+                      'public/css/main.css': 'public/sass/main.scss'<br>
+                  }<br>
+              }<br>
+          }<br>
+      });<br>
+<br>
+<br>
+<br>
+      grunt.loadNpmTasks('grunt-contrib-connect');<br>
+      grunt.loadNpmTasks('grunt-contrib-watch');<br>
+      grunt.loadNpmTasks('grunt-contrib-sass');<br>
+<br>
+<br>
+      grunt.registerTask('serve', ['connect:start', 'watch', 'sass']);<br>
+
+
+  }
+</code>
+
+
+
+
+
+
+</ul>
+</div>
