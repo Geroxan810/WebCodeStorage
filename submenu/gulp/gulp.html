@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Gulp</title>
+    <style media="screen">
+      li {
+        list-style: none;
+      }
+      p {padding-top: 80px}
+      .backButton{
+        position: absolute;
+        top: 15px;
+        left: 10px;
+        text-align: center;
+        line-height: 45px;
+        width: 50px;
+        height: 50px;
+        border-radius: 100px;
+        background-color: lightgrey;
+        font-size: 3em;
+        padding: 0
+      }
+    </style>
+  </head>
+  <body>
+    <a href="../../index.html"><div class="backButton">«</div></a>
+<p>
+
+    <a href="https://css-tricks.com/gulp-for-beginners/">CSStricks - gulp for beginner</a><br> <br>
+
+
+  |- app/ <br>
+  &nbsp;  &nbsp;|- css/ <br>
+  &nbsp;  &nbsp;|- fonts/<br>
+&nbsp;    &nbsp;|- images/<br>
+  &nbsp;  &nbsp;|- index.html<br>
+  &nbsp;  &nbsp;|- js/<br>
+  &nbsp;  &nbsp;|- scss/<br>
+|- dist/<br>
+|- gulpfile.js<br>
+|- node_modules/<br>
+|- package.json<br>
+
+
+  <ul>
+    <li> $ npm init</li>
+    <li> $ install gulp --save-dev</li>
+    <li> $ npm install gulp-sass --save-dev</li>
+    <li> $ npm install browser-sync --save-dev</li>
+    <li> $ gulp watch</li>
+  </ul>
+    <div>
+      <code>
+        var gulp = require('gulp'); <br>
+        var sass = require('gulp-sass'); <br>
+        var browserSync = require('browser-sync').create(); <br>
+        var gulp = require('gulp'); <br>
+        var autoprefixer = require('gulp-autoprefixer'); <br>
+
+        gulp.task('autoprefixer', function() {<br>
+        &nbsp;    gulp.src('app/css/styles.css')<br>
+        &nbsp;&nbsp;        .pipe(autoprefixer({<br>
+        &nbsp;&nbsp;            browsers: ['last 5 versions'],<br>
+          &nbsp;&nbsp;          cascade: false<br>
+        &nbsp;        }))<br>
+        &nbsp;        .pipe(gulp.dest('dist/css'))<br>
+        }); <br>
+
+
+        gulp.task('sass', function() {<br>
+        &nbsp;  return gulp.src('app/scss/**/*.scss') // Gets all files ending with .scss in app/scss<br>
+          &nbsp;&nbsp;  .pipe(sass())<br>
+          &nbsp;&nbsp;  .pipe(gulp.dest('app/css'))<br>
+        &nbsp;&nbsp;    .pipe(browserSync.reload({<br>
+        &nbsp;&nbsp;&nbsp;      stream: true<br>
+        &nbsp;    }))<br>
+        }); <br>
+<br>
+        gulp.task('browserSync', function() {<br>
+        &nbsp;  browserSync.init({<br>
+        &nbsp;&nbsp;    server: {<br>
+          &nbsp;&nbsp;    baseDir: 'app'<br>
+        &nbsp;    },<br>
+      &nbsp;    })<br>
+        })<br>
+<br>
+<br>
+<br>
+        gulp.task('watch', ['browserSync', 'sass', 'autoprefixer'], function (){<br>
+          &nbsp;gulp.watch('app/scss/**/*.scss', ['sass']); <br>
+        &nbsp;  gulp.watch('app/css/*.css', ['autoprefixer']); <br>
+          &nbsp;// Reloads the browser whenever HTML or JS files change<br>
+        &nbsp;  gulp.watch('app/*.html', browserSync.reload); <br>
+        &nbsp;  gulp.watch('app/js/**/*.js', browserSync.reload); <br>
+        }); <br>
+      </code>
+    </div>
+    </p>
+  </body>
+</html>
