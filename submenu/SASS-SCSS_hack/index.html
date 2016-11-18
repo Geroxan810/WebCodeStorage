@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>SASS and SCSS hack</title>
+    <link rel="stylesheet" href="../../bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../bootstrap-3.3.6-dist/css/bootstrap-theme.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <style media="screen">
+        .backButton{
+            position: absolute;
+            top: 15px;
+            left: 10px;
+            text-align: center;
+            line-height: 45px;
+            width: 50px;
+            height: 50px;
+            border-radius: 100px;
+            background-color: lightgrey;
+            font-size: 3em;
+        }
+        li {
+            list-style-type: none;
+        }
+        .col-md-4 {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<a href="../../index.html"><span class="backButton">«</span></a><br> <br>
+<div class="row">
+    <div class="col-md-4">
+        <h3>Function</h3>
+        <h4>invert text color to black/white according to bg</h4>
+        <code>
+            @function set-text-color($cta-button-color) { <br>
+            &nbsp;   @if (lightness( $cta-button-color ) > 40) {<br>
+            &nbsp;&nbsp;       @return black;<br>
+            &nbsp;    }<br>
+            &nbsp;   @else {<br>
+            &nbsp;&nbsp;       @return white;<br>
+            &nbsp;   }<br>
+            }<br>
+            <br>
+        </code>
+        USE
+        <code>
+            <p>color: set-text-color($cta-button-color);</p>
+        </code>
+    </div>
+    <div class="col-md-4">
+        <h3>Mixin</h3>
+
+    </div>
+    <div class="col-md-4">
+        <h3>Now i don't know</h3>
+
+    </div>
+</div>
+
+
+
+
+</body>
+</html>
