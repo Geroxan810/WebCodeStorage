@@ -39,43 +39,43 @@
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
     <ul id="myUL">
     <li><a href="#"><p><strong>$ show dbs</strong> - Print a list of all databases on the server.</p></a></li>
-    <li><a href="#"><p><strong>$ db.collection.insert()</strong> - Insert a new document into the collection.</p></a></li>
-    <li><a href="#"><p><strong>$ db.collection.update()</strong> - Update an existing document in the collection.</p></a></li>
-    <li><a href="#"><p><strong>$ db.collection.save()</strong> - Insert either a new document or update an existing document in the collection.</p></a></li>
-    <li><a href="#"><p><strong>$ db.collection.remove()</strong> - 	Delete documents from the collection.</p></a></li>
-    <li><a href="#"><p><strong>$ db.collection.drop()</strong> - Drops or removes completely the collection.</p></a></li>
-    <li><a href="#"><p><strong>$ db.collection.createIndex()</strong> - Create a new index on the collection if the index does not exist; otherwise, the operation has no effect.</p></a></li>
-    <li><a href="#"><p><strong>$ db.getSiblingDB()</strong> - Print a list of all databases on the server.</p></a></li>
-    <li><a href="#"><p><strong>$ db.collection.find(&lt;query&gt;)</strong> - Return a reference to another database using this same connection without explicitly switching the current database. This allows for cross database queries.</p></a></li>
-    <li><a href="#"><p><strong>$ db.collection.find(&lt;query&gt;, &lt;projection&gt;)</strong> - Find documents matching the <query> criteria and return just specific fields in the &lt;projection&gt;.
+    <li><a href="https://docs.mongodb.com/v3.2/reference/method/db.collection.insert/#db.collection.insert" target="_blank"><p><strong>$ db.collection.insert()</strong> - Insert a new document into the collection.</p></a></li>
+    <li><a href="https://docs.mongodb.com/v3.2/reference/method/db.collection.update/#db.collection.update" target="_blank"><p><strong>$ db.collection.update()</strong> - Update an existing document in the collection.</p></a></li>
+    <li><a href="https://docs.mongodb.com/v3.2/reference/method/db.collection.save/#db.collection.save" target="_blank"><p><strong>$ db.collection.save()</strong> - Insert either a new document or update an existing document in the collection.</p></a></li>
+    <li><a href="https://docs.mongodb.com/v3.2/reference/method/db.collection.remove/#db.collection.remove" target="_blank"><p><strong>$ db.collection.remove()</strong> - 	Delete documents from the collection.</p></a></li>
+    <li><a href="https://docs.mongodb.com/v3.2/reference/method/db.collection.drop/#db.collection.drop" target="_blank"><p><strong>$ db.collection.drop()</strong> - Drops or removes completely the collection.</p></a></li>
+    <li><a href="https://docs.mongodb.com/v3.2/reference/method/db.collection.createIndex/#db.collection.createIndex" target="_blank"><p><strong>$ db.collection.createIndex()</strong> - Create a new index on the collection if the index does not exist; otherwise, the operation has no effect.</p></a></li>
+    <li><a href="https://docs.mongodb.com/v3.2/reference/method/db.getSiblingDB/#db.getSiblingDB" target="_blank"><p><strong>$ db.getSiblingDB()</strong> - Print a list of all databases on the server.</p></a></li>
+    <li><a href="https://docs.mongodb.com/v3.2/reference/method/db.collection.find/#db.collection.find" target="_blank"><p><strong>$ db.collection.find(&lt;query&gt;)</strong> - Return a reference to another database using this same connection without explicitly switching the current database. This allows for cross database queries.</p></a></li>
+    <li><a href="https://docs.mongodb.com/v3.2/reference/method/db.collection.find/#db.collection.find" target="_blank"><p><strong>$ db.collection.find(&lt;query&gt;, &lt;projection&gt;)</strong> - Find documents matching the <query> criteria and return just specific fields in the &lt;projection&gt;.
 
         The following example selects all documents from the collection but returns only the name field and the _id field. The _id is always returned unless explicitly specified to not return.
 
         coll = db.users;
         coll.find( { }, { name: true } );</p></a></li>
-    <li><a href="#"><p><strong>$ db.collection.find().sort(&lt;sort order&gt;)</strong> - Return results in the specified &lt;sort order&gt;.
+    <li><a href="https://docs.mongodb.com/v3.2/reference/method/cursor.sort/#cursor.sort" target="_blank"><p><strong>$ db.collection.find().sort(&lt;sort order&gt;)</strong> - Return results in the specified &lt;sort order&gt;.
 
         The following example selects all documents from the collection and returns the results sorted by the name field in ascending order (1). Use -1 for descending order:
 
         coll = db.users;
         coll.find().sort( { name: 1 } );</p></a></li>
-    <li><a href="#"><p><strong>$ db.collection.find(&lt;query&gt;).sort(&lt;sort order&gt;)</strong> - Return the documents matching the &lt;query&gt; criteria in the specified &lt;sort order&gt;.</p></a></li>
-    <li><a href="#"><p><strong>$ db.collection.find( ... ).limit( &lt;n&gt; )</strong> - Limit result to &lt;n&gt; rows. Highly recommended if you need only a certain number of rows for best performance.</p></a></li>
-    <li><a href="#"><p><strong>$ db.collection.find( ... ).skip( &lt;n&gt; )</strong> - Skip &lt;n&gt; results.</p></a></li>
-    <li><a href="#"><p><strong>$ db.collection.count()</strong> - Returns total number of documents in the collection.</p></a></li>
-    <li><a href="#"><p><strong>$ db.collection.find(&lt;query&gt;).count()</strong> -
+    <li><a href="https://docs.mongodb.com/v3.2/reference/method/cursor.sort/#cursor.sort" target="_blank"><p><strong>$ db.collection.find(&lt;query&gt;).sort(&lt;sort order&gt;)</strong> - Return the documents matching the &lt;query&gt; criteria in the specified &lt;sort order&gt;.</p></a></li>
+    <li><a href="https://docs.mongodb.com/v3.2/reference/method/cursor.limit/#cursor.limit" target="_blank"><p><strong>$ db.collection.find( ... ).limit( &lt;n&gt; )</strong> - Limit result to &lt;n&gt; rows. Highly recommended if you need only a certain number of rows for best performance.</p></a></li>
+    <li><a href="https://docs.mongodb.com/v3.2/reference/method/cursor.skip/#cursor.skip" target="_blank"><p><strong>$ db.collection.find( ... ).skip( &lt;n&gt; )</strong> - Skip &lt;n&gt; results.</p></a></li>
+    <li><a href="https://docs.mongodb.com/v3.2/reference/method/db.collection.count/#db.collection.count" target="_blank"><p><strong>$ db.collection.count()</strong> - Returns total number of documents in the collection.</p></a></li>
+    <li><a href="https://docs.mongodb.com/v3.2/reference/method/cursor.count/#cursor.count" target="_blank"><p><strong>$ db.collection.find(&lt;query&gt;).count()</strong> -
         Returns the total number of documents that match the query.
         <br>
         The count() ignores limit() and skip(). For example, if 100 records match but the limit is 10, count() will return 100. This will be faster than iterating yourself, but still take time.</p></a></li>
-    <li><a href="#"><p><strong>$ db.collection.findOne(&lt;query&gt;)</strong> - Find and return a single document. Returns null if not found.
+    <li><a href="https://docs.mongodb.com/v3.2/reference/method/db.collection.findOne/#db.collection.findOne" target="_blank"><p><strong>$ db.collection.findOne(&lt;query&gt;)</strong> - Find and return a single document. Returns null if not found.
 
         The following example selects a single document in the users collection with the name field matches to "Joe":
 
         coll = db.users;
         coll.findOne( { name: "Joe" } );
         Internally, the findOne() method is the find() method with a limit(1).</p></a></li>
-    <li><a href="#"><p><strong>$ db = connect(&quot;&lt;host&gt;&lt;:port&gt;/&lt;dbname&gt;")</strong> - Open a new database connection.</p></a></li>
-    <li><a href="#"><p><strong>$ conn = new Mongo() <br>
+    <li><a href="https://docs.mongodb.com/v3.2/reference/mongo-shell/" target="_blank"><p><strong>$ db = connect(&quot;&lt;host&gt;&lt;:port&gt;/&lt;dbname&gt;")</strong> - Open a new database connection.</p></a></li>
+    <li><a href="https://docs.mongodb.com/v3.2/reference/mongo-shell/" target="_blank"><p><strong>$ conn = new Mongo() <br>
         db = conn.getDB("dbname")</strong> - Open a connection to a new server using new Mongo().
 
         Use getDB() method of the connection to select a database.</p></a></li>
