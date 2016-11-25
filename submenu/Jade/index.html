@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jade</title>
+    <link rel="stylesheet" href="../../bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../bootstrap-3.3.6-dist/css/bootstrap-theme.min.css">
+    <script src="../../bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+<h2>templating language - now Pug</h2>
+    <p>doctype html</p>
+    <p>html</p>
+    <p>&nbsp;head</p>
+    <p>&nbsp;	&nbsp;title= title</p>
+    <p>&nbsp;	&nbsp;link(rel='stylesheet', href='/stylesheets/style.css')</p>
+    <p>&nbsp;body</p>
+    <p>&nbsp;p Welcome!</p>
+    <p>&nbsp;p. Welcome!</p>
+    &nbsp;&nbsp;&nbsp; lorem ipsum dolor sit amet //multiline
+    <p>&nbsp;	&nbsp;block content</p>
+    <p>&nbsp;input(type='text').class-name#anyID</p>
+    <p>&nbsp;- var condition = true</p>
+    <p>&nbsp;if condition</p>
+    <p>&nbsp;&nbsp;p It`s true</p>
+    <p>&nbsp;- var myArray = [1,2,"hi"]</p>
+    <p>&nbsp;&nbsp; each value in myArray</p>
+    <p>&nbsp;&nbsp;p= value</p>
+    <p>&nbsp;- var variable = 'some info'</p>
+    <p>&nbsp;&nbsp;p get #{variable} from this</p>
+
+
+
+<br>
+
+    <p>extends &lt;name&gt;</p>
+
+<code>
+    &lt;!DOCTYPE html&gt;<br>
+    &lt;html&gt;<br>
+        &lt;head&gt;<br>
+            &lt;title&gt;title - variable&lt;/title&gt;<br>
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;/stylesheets/style.css&quot;&gt;<br>
+        &lt;/head&gt;<br>
+        &lt;body&gt;<br>
+        &lt;p&gt;Welcome&lt;/p&gt;<br>
+        &lt;p&gt;Welcome lorem ipsum dolor sit amet //multiline&lt;/p&gt;<br>
+        block content = everythink under this code in other file&lt;br&gt;<br>
+        &lt;input type=&quot;text&quot; class=&quot;class-name&quot; id=&quot;anyID&quot;&gt;<br>
+        &lt;p&gt;It`s true&lt;/p&gt;<br>
+        &lt;p&gt;1&lt;/p&gt;<br>
+        &lt;p&gt;2&lt;/p&gt;<br>
+        &lt;p&gt;3&lt;/p&gt;<br>
+        &lt;p&gt;get some info from this&lt;/p&gt;<br>
+        &lt;/body&gt;<br>
+    &lt;/html&gt;<br>
+</code>
+
+</div>
+</body>
+</html>
