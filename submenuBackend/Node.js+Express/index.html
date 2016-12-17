@@ -8,9 +8,35 @@
     <script src="../../jquery-2.2.4.min.js"></script>
     <script src="../../bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <style>
+        .container {
+            padding: 10px;
+        }
+        .container img {
+            padding: 10px;
+        }
+        hr {
+            border-top: 5px solid #0f0f0f;
+        }
+        .file {
+            padding: 5px;
+            background-color: #67b168;
+        }
+        .dir {
+            padding: 5px;
+            background-color: #e85148;
+        }
+        code {
+            background-color: #f8efc0;
+            width: 100%;
+            display: block;
+            max-width: 350px;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
+    <h1 style="text-align: center">Node.js and Express.js</h1>
     <img src="screen-directory.JPG"/>
     <p><strong>bin</strong> = dir with server</p>
     <p><strong>node_modules</strong> = dir with install node modules - E.g. Express,...</p>
@@ -20,6 +46,44 @@
     <p><strong>app.js</strong> = Express</p>
     <p><strong>npm-debug.log</strong> = not important</p>
     <p><strong>package.json</strong> = dependency</p>
+    <hr>
+    <h2>Route</h2>
+    <p>in <span class="file">app.js</span> define: <br><br>
+       <code>
+        var page = require('./routes/page'); <br><br>
+        // <br><br>
+        app.use('/page', page);
+       </code>
+    </p>
+    <p>in <span class="dir">Routes</span> create file <span class="file">page.js</span> and paste: <br><br>
+        <code>
+        var express = require('express');<br>
+        var router = express.Router();<br>
+<br>
+        // define the home page route for index/page<br>
+        router.get('/', function (req, res) {<br>
+        res.send('home page for Page')<br>
+        });<br>
+        // define the about route == index/page/about<br>
+        router.get('/about', function (req, res) {<br>
+        res.send('About page')<br>
+        });<br>
+<br>
+        module.exports = router;<br>
+        </code>
+    </p>
+    <p>then open: localhost:3000/page/about</p>
+    <h3>variable in path</h3>
+    <p>
+    in <span class="file">page.js</span> define: <br><br>
+        <code>
+            // define the number page route <br>
+            router.get('/:type', function (req, res) { <br>
+            var type = req.params.type; <br>
+            res.send('page number ' + type); <br>
+            }); <br>
+        </code>
+    </p>
 </div>
 </body>
 </html>
