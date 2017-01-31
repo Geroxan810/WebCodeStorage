@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>Scripts</title>
+  <style>
+    input {
+      padding: 10px;
+      width: 100%;
+    }
+    ul {
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1 class="text-center">Scripts storage - JS</h1>
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search..">
+  <ul id="myUL">
+    <li>
+      <a href="">Search in document</a>
+      <p>
+        <code>
+        function myFunction() {<br />
+        var input, filter, ul, li, a, i;<br />
+        input = document.getElementById("myInput");<br />
+        filter = input.value.toUpperCase();<br />
+        ul = document.getElementById("myUL");<br />
+        li = ul.getElementsByTagName("li");<br />
+        for (i = 0; i < li.length; i++) {<br />
+        &nbsp;a = li[i].getElementsByTagName("a")[0];<br />
+        &nbsp;&nbsp;if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {<br />
+        &nbsp;&nbsp;&nbsp;li[i].style.display = "";<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;} else {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;li[i].style.display = "none";<br />
+
+          &nbsp; &nbsp;}<br>
+          &nbsp; }<br>
+        }<br>
+        </code>
+      </p>
+    </li>
+    <li>
+      <a href=""></a>
+      <p>
+
+      </p>
+    </li>
+    <li>
+      <a href=""></a>
+      <p>
+
+      </p>
+    </li>
+    <li>
+      <a href=""></a>
+      <p>
+
+      </p>
+    </li>
+    <li>
+      <a href=""></a>
+      <p>
+
+      </p>
+    </li>
+    <li>
+      <a href=""></a>
+      <p>
+
+      </p>
+    </li>
+    <li>
+      <a href=""></a>
+      <p>
+
+      </p>
+    </li>
+    <li>
+      <a href=""></a>
+      <p>
+
+      </p>
+    </li>
+    <li>
+      <a href=""></a>
+      <p>
+
+      </p>
+    </li>
+    <li>
+      <a href=""></a>
+      <p>
+
+      </p>
+    </li>
+    <li>
+      <a href=""></a>
+      <p>
+
+      </p>
+    </li>
+    <li>
+      <a href=""></a>
+      <p>
+
+      </p>
+    </li>
+    <li>
+      <a href=""></a>
+      <p>
+
+      </p>
+    </li>
+  </ul>
+</div>
+<script>
+  function myFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+      a = li[i].getElementsByTagName("a")[0];
+      if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+
+      }
+    }
+  }
+</script>
+</body>
+</html>
