@@ -5,446 +5,480 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   <link rel="stylesheet" href="../../../bootstrap-3.3.6-dist/css/bootstrap.min.css">
-    <title>Title</title>
+    <title>Typescript</title>
+    <style>
+      input {
+        padding: 10px;
+        width: 100%;
+      }
+      ul {
+        padding: 0;
+      }
+    </style>
 </head>
 <body>
 <div class="container">
   <h2 class="text-center">Typescript</h2>
- <br>
-  // TypeScript brings a type system and future <br>
-  // capabilities of JS today <br>
- <br>
-  // To compile TypeScript to JavaScript you <br>
-  // must install a compiler <br>
-  // Install Node at https://nodejs.org/en/ <br>
- <br>
-  // Check that npm is installed OSX : <br>
-  // sudo npm install npm -g <br>
- <br>
-  // Check that npm is installed Windows : <br>
-  // npm install npm -g (As Admin) <br>
- <br>
-  // Type in your terminal : npm install -g typescript <br>
- <br>
-  // I'll use Ecmascript 5 in this tutorial <br>
- <br>
-  // Compile to JS with tsc tstut.ts --target ES5 <br>
- <br>
-  // On Linux / OSX machines autocompile by typing <br>
-  // tsc *.ts --watch --target ES5 in the terminal <br>
- <br>
-  // ---------- VARIABLES ---------- <br>
- <br>
-  // Variables must start with a letter, _, or $ <br>
-  // and then can contain numbers <br>
- <br>
-  // Declaring variables as statically typed is optional <br>
-  // If you only provide a value the type is inferred <br>
- <br>
-  var myName: string = "Derek"; <br>
- <br>
-  var myAge: number = 41; <br>
- <br>
-  // booleans can only be true or false <br>
-  var canVote: boolean = true; <br>
- <br>
-  // A variable marked as any is a dynamic type <br>
-  var anything: any = "dog"; <br>
-  anything = 2; <br>
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search..">
+  <ul id="myUL">
+    <li><a href="#">VARIABLES</a>
+      <p>
+        // Variables must start with a letter, _, or $ <br>
+        // and then can contain numbers <br>
+        <br>
+        // Declaring variables as statically typed is optional <br>
+        // If you only provide a value the type is inferred <br>
+        <br>
+        var myName: string = "Derek"; <br>
+        <br>
+        var myAge: number = 41; <br>
+        <br>
+        // booleans can only be true or false <br>
+        var canVote: boolean = true; <br>
+        <br>
+        // A variable marked as any is a dynamic type <br>
+        var anything: any = "dog"; <br>
+        anything = 2; <br>
 
-  // You can print in the defined element<br>
-  document.getElementById("tsStuff").innerHTML = "My Name is " + myName;<br>
-<br>
-  // A variable that didn't get a value assigned<br>
-  // gets undefined<br>
-<br>
-  // null is a user assigned value saying that<br>
-  // no value is assigned<br>
-<br>
-  // typeof returns the data type<br>
-  document.write("myName is a " + typeof(myName) + "<br />");<br>
-  document.write("canVote is a " + typeof(canVote) + "<br />");<br>
-  document.write("anything is a " + typeof(anything) + "<br />");<br>
-<br>
-  // We can convert strings to numbers<br>
-  var strToNum: number = parseInt("5");<br>
-  document.write("strToNum is a " + typeof(strToNum) + "<br />");<br>
-<br>
-  // toString() converts anything into a string<br>
-  var numToStr: number = 5;<br>
-  document.write("numToStr is a " + typeof(numToStr.toString()) + "<br />");<br>
-<br>
-  // You define constants with const<br>
-  const PI = 3.14159;<br>
-<br>
-  // ---------- INTERFACES ----------<br>
-  // An interface can be used to describe complex<br>
-  // types<br>
-<br>
-  interface SuperHero {<br>
-  realName: String;<br>
-  superName: String;<br>
-  }<br>
-<br>
-  var superman: SuperHero = {<br>
-  realName: "Clark Kent",<br>
-  superName: "Superman"<br>
-  }<br>
-<br>
-  // It is best to always separate with +<br>
-  document.write(superman.realName + " is " + superman.superName + "<br />");<br>
-<br>
-  // More on interfaces below<br>
-<br>
-  // ---------- ARRAYS ----------<br>
-<br>
-  // Creates an array of strings that only excepts<br>
-  // string values<br>
-  var employees: string[] = ["Bob", "Sally", "Sam"];<br>
-<br>
-  // This would cause an error<br>
-  // employees.push(5);<br>
-<br>
-  // Print all values in array<br>
-  document.write(employees.toString() + "<br />");<br>
-<br>
-  // You can create arrays of interfaces<br>
-  var superheroes: SuperHero[] = [];<br>
-<br>
-  superheroes.push({<br>
-  realName: 'Bruce Wayne',<br>
-  superName: 'Batman'<br>
-  });<br>
-<br>
-  document.write(superheroes[0].realName + " is " + superheroes[0].superName + "<br />");<br>
-<br>
-  // ---------- MATH ----------<br>
-<br>
-  document.write("5 + 4 = " + (5+4) + "<br />");<br>
-  document.write("5 - 4 = " + (5-4) + "<br />");<br>
-  document.write("5 * 4 = " + 5*4 + "<br />");<br>
-  document.write("5 / 4 = " + 5/4 + "<br />");<br>
-  document.write("5 % 4 = " + 5%4 + "<br />");<br>
-<br>
-  // If you try to add anything to a string both<br>
-  // become strings<br>
-  document.write("5 + String 2 = ", (5+'2') + "<br />");<br>
-<br>
-  var randNum: number = 1;<br>
-<br>
-  // If you increment after the current value is used<br>
-  // and then it is incremented after<br>
-  // The same is true with placing the -- after the<br>
-  // variable<br>
-  document.write("randNum++ = " + randNum++ + "<br />");<br>
-  document.write("++randNum = " + ++randNum + "<br />");<br>
-  document.write("randNum-- = " + randNum-- + "<br />");<br>
-  document.write("--randNum = " + --randNum + "<br />");<br>
-<br>
-  // ---------- CONDITIONALS ----------<br>
-  // If, Switch and the Ternary operator work<br>
-  // the same in TypeScript as in JS<br>
-<br>
-  // Variables defined with let in blocks don't<br>
-  // change the value of variables outside the block<br>
-<br>
-  let sampLet = 123;<br>
-  if (true) {<br>
-  let sampLet = 456;<br>
-  }<br>
-  document.write("sampLet : " + sampLet + "<br />");<br>
-<br>
-  var sampVar = 123;<br>
-  if (true) {<br>
-  var sampVar = 456;<br>
-  }<br>
-  document.write("sampVar : " + sampVar + "<br />");<br>
-<br>
-  // ---------- LOOPING ----------<br>
-  // Looping works the same in TypeScript as in JS<br>
-  // but for..of is added to get values in either<br>
-  // an array or string<br>
-<br>
-  var randArray = [5,6,7,8];<br>
-<br>
-  // for..in provides the indexes<br>
-  for(var val in randArray){<br>
-  document.write(val + "<br />");<br>
-  }<br>
-<br>
-  // Convert a number array into a string array<br>
-  var strArray = randArray.map(String)<br>
-<br>
-  // for..of provides the values<br>
-  for(var val of strArray){<br>
-  document.write(val + "<br />");<br>
-  }<br>
-<br>
-  // ---------- FUNCTIONS ----------<br>
-<br>
-  // You can assign the variable types for the attributes<br>
-  // You assign the return type after the attributes<br>
-  // or if nothing is returned use void<br>
-  var getSum = function(num1: number, num2: number): number{<br>
-  return num1 + num2;<br>
-  }<br>
-<br>
-  var theSum1: number = getSum(5,2);<br>
-<br>
-  document.write("5 + 2 = " + theSum1 + "<br />");<br>
-<br>
-  // Assign a default value in the function declaration<br>
-  // If an attribute isn't required follow the variable<br>
-  // with a ?<br>
-  var getDiff = function(num1: number, num2 = 2, num3?: number): number{<br>
-<br>
-  // Check if a value was assigned with typeof<br>
-  if (typeof num3 !== 'undefined'){<br>
-  return num1 - num2 - num3;<br>
-  }<br>
-  return num1 - num2;<br>
-  }<br>
-<br>
-  document.write("5 - 2 = " + getDiff(5) + "<br />");<br>
-  document.write("5 - 2 - 3 = " + getDiff(5,2,3) + "<br />");<br>
-<br>
-  // You can receive an unknown number of values<br>
-  // with a rest parameter ...nums<br>
-  var sumAll = function(...nums: number[]): void{<br>
-<br>
-  // We can use reduce with the array to add all<br>
-  // the values together one by one<br>
-  var sum = nums.reduce((a, b) => a + b, 0);<br>
-  document.write("Sum : " + sum + "<br />");<br>
-  }<br>
-<br>
-  sumAll(1,2,3,4,5);<br>
-<br>
-  // Arrow functions don't include function in<br>
-  // the definition<br>
-<br>
-  var addOne = (x)=>x+1;<br>
-<br>
-  document.write("1 + 1 = " + addOne(1) + "<br />");<br>
-<br>
-  // ---------- CLASSES ----------<br>
-<br>
-  // Classes describe real world objects by defining<br>
-  // their attributes (fields) and capabilities<br>
-  // (methods)<br>
-<br>
-  class Animal {<br>
-<br>
-  // class fields<br>
-  public favFood: string;<br>
-<br>
-  // static fields have values that are shared<br>
-  // by every object<br>
-  static numOfAnimals: number = 0;<br>
-<br>
-  // If you define an attribute with private<br>
-  // the value is automatically assigned<br>
-  constructor(private name: string, private owner: string){<br>
-  Animal.numOfAnimals++;<br>
-  }<br>
-<br>
-  // You can define methods as private but then<br>
-  // it can't be seen by subclasses, or accessed<br>
-  // by any code other then that within the class<br>
-  ownerInfo() {<br>
-  document.write(this.name + " is owned by " + this.owner + "<br />");<br>
-  }<br>
-<br>
-  // Static methods are accessed using the class<br>
-  // name<br>
-  static howManyAnimals(): number{<br>
-  return Animal.numOfAnimals;<br>
-  }<br>
-<br>
-  // Define getters and setters<br>
-<br>
-  private _weight: number;<br>
-<br>
-  get weight(): number{<br>
-  return this._weight;<br>
-  }<br>
-<br>
-  set weight(weight: number){<br>
-  this._weight = weight;<br>
-  }<br>
-<br>
-  }<br>
-<br>
-  // Create an Animal object<br>
-  var spot = new Animal("Spot", "Doug");<br>
-<br>
-  spot.ownerInfo();<br>
-<br>
-  spot.weight = 100<br>
-<br>
-  document.write("Spot's weight is " + spot.weight + "<br />");<br>
-<br>
-  // You can only access static methods by proceeding<br>
-  // it with the class name<br>
-  document.write("# of Animals : " + Animal.howManyAnimals() + "<br />");<br>
-<br>
-  // You can inherit all methods and fields from<br>
-  // another class with extends<br>
-  // Additional methods and fields can be added<br>
-  // or overwritten<br>
-<br>
-  class Dog extends Animal{<br>
-  constructor(name: string, owner: string){<br>
-  super(name, owner);<br>
-  Dog.numOfAnimals++;<br>
-  }<br>
-  }<br>
-<br>
-  var grover = new Dog("Grover", "Jimmy");<br>
-<br>
-  // A call to howManyAnimals() is now 2<br>
-  document.write("# of Animals : " + Animal.howManyAnimals() + "<br />");<br>
-<br>
-  // Use instanceof to check for inheritance<br>
-  document.write("Is a Dog an Animal : " + (grover instanceof Animal) + "<br />");<br>
-<br>
-  // Check if a field exists for an object<br>
-  document.write("Does grover have a name : " + ('name' in grover) + "<br />");<br>
-<br>
-  // ---------- INTERFACES 2 ----------<br>
-  // Interfaces define a contract in which if a<br>
-  // class implements it is must create all<br>
-  // functions defined in the interface<br>
-<br>
-  interface Vehicle {<br>
-  drive(): any;<br>
-  }<br>
-<br>
-  class Car implements Vehicle{<br>
-  constructor(private wheels: number){}<br>
-<br>
-  drive(): void{<br>
-  document.write("The car drives with " + this.wheels + " wheels<br />");<br>
-  }<br>
-  }<br>
-<br>
-  class Bicycle implements Vehicle{<br>
-  constructor(private wheels: number){}<br>
-<br>
-  drive(): void{<br>
-  document.write("The bicycle drives with " + this.wheels + " wheels<br />");<br>
-  }<br>
-  }<br>
-<br>
-  var car = new Car(4);<br>
-  var bike = new Bicycle(2);<br>
-<br>
-  car.drive();<br>
-  bike.drive();<br>
-<br>
-  // ---------- GENERIC FUNCTIONS ----------<br>
-  // We use generic functions when we want<br>
-  // to be able to work with multiple data<br>
-  // types in similar ways<br>
-<br>
-  // To create a generic function we place<br>
-  // 1 or more data type markers in angled<br>
-  // brackets after the function name. We<br>
-  // then use those data type markers<br>
-  // instead of actual data types.<br>
-<br>
-  function GetType<T>(val: T): string{<br>
-  return typeof(val);<br>
-  }<br>
-<br>
-  var aStr = "A String";<br>
-  var aNum = 10;<br>
-<br>
-  document.write(GetType(aStr) + "<br />");<br>
-  document.write(GetType(aNum) + "<br />");<br>
-<br>
-  // You define a generic function that<br>
-  // excepts any class that implements<br>
-  // an interface<br>
-<br>
-  function GetWheels<w extends Vehicle>(veh: w): number<br>
-    {<br>
-    return veh.drive();<br>
-    }<br>
-<br>
-    GetWheels(car);<br>
-    GetWheels(bike);<br>
-<br>
-    // You can also define generic classes that<br>
-    // can work with multiple data types<br>
-<br>
-    class GenericNumber<T>{<br>
-<br>
-      // An arrow function as described above<br>
-      add: (val1: T, val2: T) => T;<br>
+        // You can print in the defined element<br>
+        document.getElementById("tsStuff").innerHTML = "My Name is " + myName;<br>
+        <br>
+        // A variable that didn't get a value assigned<br>
+        // gets undefined<br>
+        <br>
+        // null is a user assigned value saying that<br>
+        // no value is assigned<br>
+        <br>
+        // typeof returns the data type<br>
+        document.write("myName is a " + typeof(myName) + "<br />");<br>
+        document.write("canVote is a " + typeof(canVote) + "<br />");<br>
+        document.write("anything is a " + typeof(anything) + "<br />");<br>
+        <br>
+        // We can convert strings to numbers<br>
+        var strToNum: number = parseInt("5");<br>
+        document.write("strToNum is a " + typeof(strToNum) + "<br />");<br>
+        <br>
+        // toString() converts anything into a string<br>
+        var numToStr: number = 5;<br>
+        document.write("numToStr is a " + typeof(numToStr.toString()) + "<br />");<br>
+        <br>
+        // You define constants with const<br>
+        const PI = 3.14159;<br>
+      </p>
+    </li>
+    <li><a href="#">INTERFACES</a>
+    <p>
+      // An interface can be used to describe complex<br>
+      // types<br>
+      <br>
+      interface SuperHero {<br>
+      realName: String;<br>
+      superName: String;<br>
       }<br>
-<br>
-      var aNumber = new GenericNumber<number>();<br>
-<br>
-        // Define how we want add to work with numbers<br>
-        aNumber.add = function(x, y){return x + y;};<br>
-<br>
-        document.write("5 + 4 = " + aNumber.add(5, 4) + "<br />");<br>
-<br>
-        var aStrNum = new GenericNumber<string>();<br>
-<br>
-          // Define how we want add to work with strings<br>
-          aStrNum.add = function(x, y){return String(Number(x) + Number(y));};<br>
-<br>
-          document.write("5 + 6 = " + aStrNum.add("5", "6") + "<br />");<br>
-<br>
-          // ---------- DESTRUCTORING ----------<br>
-          // You can assign multiple values on one line<br>
-<br>
-          var randVals = {x: 1, y: 2, z: 3};<br>
-          var {x, y, z} = randVals;<br>
-<br>
-          document.write(x + y + z + "<br />");<br>
-<br>
-          // Do the same with arrays<br>
-          [x, y, z] = [z, y, x];<br>
-          document.write("Switch : " + x + y + z + "<br />");<br>
-<br>
-          // ---------- TEMPLATE STRINGS ----------<br>
-          // Create multiline strings<br>
-          var multStr = `I go on for<br>
-          many lines<br />`;<br>
-          document.write(multStr);<br>
-<br>
-          // You can use string interpolation<br>
-          document.write(`<b>${multStr}</b>`);<br>
-<br>
-          // ---------- SPREAD OPERATOR ----------<br>
-          // We can separate values in an array into<br>
-          // attributs in a function<br>
-<br>
-          function theSum(x, y, z): void{<br>
-          document.write("Sum : " + (x + y + z) + "<br />");<br>
+      <br>
+      var superman: SuperHero = {<br>
+      realName: "Clark Kent",<br>
+      superName: "Superman"<br>
+      }<br>
+      <br>
+      // It is best to always separate with +<br>
+      document.write(superman.realName + " is " + superman.superName + "<br />");<br>
+      <br>
+      // More on interfaces below<br>
+      <br>
+    </p>
+    </li>
+    <li><a href="#">ARRAYS</a>
+    <p>
+      // Creates an array of strings that only excepts<br>
+      // string values<br>
+      var employees: string[] = ["Bob", "Sally", "Sam"];<br>
+      <br>
+      // This would cause an error<br>
+      // employees.push(5);<br>
+      <br>
+      // Print all values in array<br>
+      document.write(employees.toString() + "<br />");<br>
+      <br>
+      // You can create arrays of interfaces<br>
+      var superheroes: SuperHero[] = [];<br>
+      <br>
+      superheroes.push({<br>
+      realName: 'Bruce Wayne',<br>
+      superName: 'Batman'<br>
+      });<br>
+      <br>
+      document.write(superheroes[0].realName + " is " + superheroes[0].superName + "<br />");<br>
+    </p>
+    </li>
+    <li><a href="#">MATH</a>
+      <p>
+        document.write("5 + 4 = " + (5+4) + "<br />");<br>
+        document.write("5 - 4 = " + (5-4) + "<br />");<br>
+        document.write("5 * 4 = " + 5*4 + "<br />");<br>
+        document.write("5 / 4 = " + 5/4 + "<br />");<br>
+        document.write("5 % 4 = " + 5%4 + "<br />");<br>
+        <br>
+        // If you try to add anything to a string both<br>
+        // become strings<br>
+        document.write("5 + String 2 = ", (5+'2') + "<br />");<br>
+        <br>
+        var randNum: number = 1;<br>
+        <br>
+        // If you increment after the current value is used<br>
+        // and then it is incremented after<br>
+        // The same is true with placing the -- after the<br>
+        // variable<br>
+        document.write("randNum++ = " + randNum++ + "<br />");<br>
+        document.write("++randNum = " + ++randNum + "<br />");<br>
+        document.write("randNum-- = " + randNum-- + "<br />");<br>
+        document.write("--randNum = " + --randNum + "<br />");<br>
+        <br>
+
+      </p>
+      </li>
+    <li><a href="#">CONDITIONALS</a>
+      <p>
+        // If, Switch and the Ternary operator work<br>
+        // the same in TypeScript as in JS<br>
+        <br>
+        // Variables defined with let in blocks don't<br>
+        // change the value of variables outside the block<br>
+        <br>
+        let sampLet = 123;<br>
+        if (true) {<br>
+        let sampLet = 456;<br>
+        }<br>
+        document.write("sampLet : " + sampLet + "<br />");<br>
+        <br>
+        var sampVar = 123;<br>
+        if (true) {<br>
+        var sampVar = 456;<br>
+        }<br>
+        document.write("sampVar : " + sampVar + "<br />");<br>
+      </p>
+      </li>
+    <li><a href="#">LOOPING</a>
+      <p>
+        // Looping works the same in TypeScript as in JS<br>
+        // but for..of is added to get values in either<br>
+        // an array or string<br>
+        <br>
+        var randArray = [5,6,7,8];<br>
+        <br>
+        // for..in provides the indexes<br>
+        for(var val in randArray){<br>
+        document.write(val + "<br />");<br>
+        }<br>
+        <br>
+        // Convert a number array into a string array<br>
+        var strArray = randArray.map(String)<br>
+        <br>
+        // for..of provides the values<br>
+        for(var val of strArray){<br>
+        document.write(val + "<br />");<br>
+        }<br>
+      </p>
+      </li>
+    <li><a href="#">FUNCTIONS</a>
+      <p>
+        // You can assign the variable types for the attributes<br>
+        // You assign the return type after the attributes<br>
+        // or if nothing is returned use void<br>
+        var getSum = function(num1: number, num2: number): number{<br>
+        return num1 + num2;<br>
+        }<br>
+        <br>
+        var theSum1: number = getSum(5,2);<br>
+        <br>
+        document.write("5 + 2 = " + theSum1 + "<br />");<br>
+        <br>
+        // Assign a default value in the function declaration<br>
+        // If an attribute isn't required follow the variable<br>
+        // with a ?<br>
+        var getDiff = function(num1: number, num2 = 2, num3?: number): number{<br>
+        <br>
+        // Check if a value was assigned with typeof<br>
+        if (typeof num3 !== 'undefined'){<br>
+        return num1 - num2 - num3;<br>
+        }<br>
+        return num1 - num2;<br>
+        }<br>
+        <br>
+        document.write("5 - 2 = " + getDiff(5) + "<br />");<br>
+        document.write("5 - 2 - 3 = " + getDiff(5,2,3) + "<br />");<br>
+        <br>
+        // You can receive an unknown number of values<br>
+        // with a rest parameter ...nums<br>
+        var sumAll = function(...nums: number[]): void{<br>
+        <br>
+        // We can use reduce with the array to add all<br>
+        // the values together one by one<br>
+        var sum = nums.reduce((a, b) => a + b, 0);<br>
+        document.write("Sum : " + sum + "<br />");<br>
+        }<br>
+        <br>
+        sumAll(1,2,3,4,5);<br>
+        <br>
+        // Arrow functions don't include function in<br>
+        // the definition<br>
+        <br>
+        var addOne = (x)=>x+1;<br>
+        <br>
+        document.write("1 + 1 = " + addOne(1) + "<br />");<br>
+      </p>
+      </li>
+    <li><a href="#">CLASSES</a>
+      <p>
+        // Classes describe real world objects by defining<br>
+        // their attributes (fields) and capabilities<br>
+        // (methods)<br>
+        <br>
+        class Animal {<br>
+        <br>
+        // class fields<br>
+        public favFood: string;<br>
+        <br>
+        // static fields have values that are shared<br>
+        // by every object<br>
+        static numOfAnimals: number = 0;<br>
+        <br>
+        // If you define an attribute with private<br>
+        // the value is automatically assigned<br>
+        constructor(private name: string, private owner: string){<br>
+        Animal.numOfAnimals++;<br>
+        }<br>
+        <br>
+        // You can define methods as private but then<br>
+        // it can't be seen by subclasses, or accessed<br>
+        // by any code other then that within the class<br>
+        ownerInfo() {<br>
+        document.write(this.name + " is owned by " + this.owner + "<br />");<br>
+        }<br>
+        <br>
+        // Static methods are accessed using the class<br>
+        // name<br>
+        static howManyAnimals(): number{<br>
+        return Animal.numOfAnimals;<br>
+        }<br>
+        <br>
+        // Define getters and setters<br>
+        <br>
+        private _weight: number;<br>
+        <br>
+        get weight(): number{<br>
+        return this._weight;<br>
+        }<br>
+        <br>
+        set weight(weight: number){<br>
+        this._weight = weight;<br>
+        }<br>
+        <br>
+        }<br>
+        <br>
+        // Create an Animal object<br>
+        var spot = new Animal("Spot", "Doug");<br>
+        <br>
+        spot.ownerInfo();<br>
+        <br>
+        spot.weight = 100<br>
+        <br>
+        document.write("Spot's weight is " + spot.weight + "<br />");<br>
+        <br>
+        // You can only access static methods by proceeding<br>
+        // it with the class name<br>
+        document.write("# of Animals : " + Animal.howManyAnimals() + "<br />");<br>
+        <br>
+        // You can inherit all methods and fields from<br>
+        // another class with extends<br>
+        // Additional methods and fields can be added<br>
+        // or overwritten<br>
+        <br>
+        class Dog extends Animal{<br>
+        constructor(name: string, owner: string){<br>
+        super(name, owner);<br>
+        Dog.numOfAnimals++;<br>
+        }<br>
+        }<br>
+        <br>
+        var grover = new Dog("Grover", "Jimmy");<br>
+        <br>
+        // A call to howManyAnimals() is now 2<br>
+        document.write("# of Animals : " + Animal.howManyAnimals() + "<br />");<br>
+        <br>
+        // Use instanceof to check for inheritance<br>
+        document.write("Is a Dog an Animal : " + (grover instanceof Animal) + "<br />");<br>
+        <br>
+        // Check if a field exists for an object<br>
+        document.write("Does grover have a name : " + ('name' in grover) + "<br />");<br>
+      </p>
+      </li>
+    <li><a href="#">INTERFACES 2</a>
+      <p>
+        // Interfaces define a contract in which if a<br>
+        // class implements it is must create all<br>
+        // functions defined in the interface<br>
+        <br>
+        interface Vehicle {<br>
+        drive(): any;<br>
+        }<br>
+        <br>
+        class Car implements Vehicle{<br>
+        constructor(private wheels: number){}<br>
+        <br>
+        drive(): void{<br>
+        document.write("The car drives with " + this.wheels + " wheels<br />");<br>
+        }<br>
+        }<br>
+        <br>
+        class Bicycle implements Vehicle{<br>
+        constructor(private wheels: number){}<br>
+        <br>
+        drive(): void{<br>
+        document.write("The bicycle drives with " + this.wheels + " wheels<br />");<br>
+        }<br>
+        }<br>
+        <br>
+        var car = new Car(4);<br>
+        var bike = new Bicycle(2);<br>
+        <br>
+        car.drive();<br>
+        bike.drive();<br>
+      </p>
+      </li>
+    <li><a href="#">GENERIC FUNCTIONS</a>
+      <p>
+        // We use generic functions when we want<br>
+        // to be able to work with multiple data<br>
+        // types in similar ways<br>
+        <br>
+        // To create a generic function we place<br>
+        // 1 or more data type markers in angled<br>
+        // brackets after the function name. We<br>
+        // then use those data type markers<br>
+        // instead of actual data types.<br>
+        <br>
+        function GetType&lt;T&gt;(val: T): string{<br>
+        return typeof(val);<br>
+        }<br>
+        <br>
+        var aStr = "A String";<br>
+        var aNum = 10;<br>
+        <br>
+        document.write(GetType(aStr) + "<br />");<br>
+        document.write(GetType(aNum) + "<br />");<br>
+        <br>
+        // You define a generic function that<br>
+        // excepts any class that implements<br>
+        // an interface<br>
+        <br>
+        function GetWheels&lt;w extends Vehicle&gt;(veh: w): number<br>
+          {<br>
+          return veh.drive();<br>
           }<br>
-<br>
-          var args = [4, 5, 6];<br>
-<br>
-          theSum(...args);<br>
-<br>
-          // ---------- ENUMS ----------<br>
-          // Enums are number based in TS<br>
-<br>
-          enum Emotion {<br>
-          Happy = 1,<br>
-          Sad,<br>
-          Angry<br>
-          };<br>
-<br>
-          var myFeeling = Emotion.Happy;<br>
-<br>
-          // Same as<br>
-<br>
-          myFeeling = 1;<br>
+          <br>
+          GetWheels(car);<br>
+          GetWheels(bike);<br>
+          <br>
+          // You can also define generic classes that<br>
+          // can work with multiple data types<br>
+          <br>
+          class GenericNumber&lt;T&gt;{<br>
+            <br>
+            // An arrow function as described above<br>
+            add: (val1: T, val2: T) => T;<br>
+            }<br>
+            <br>
+            var aNumber = new GenericNumber&lt;number&gt;();<br>
+              <br>
+              // Define how we want add to work with numbers<br>
+              aNumber.add = function(x, y){return x + y;};<br>
+              <br>
+              document.write("5 + 4 = " + aNumber.add(5, 4) + "<br />");<br>
+              <br>
+              var aStrNum = new GenericNumber&lt;string&gt;();<br>
+                <br>
+                // Define how we want add to work with strings<br>
+                aStrNum.add = function(x, y){return String(Number(x) + Number(y));};<br>
+                <br>
+                document.write("5 + 6 = " + aStrNum.add("5", "6") + "<br />");<br>
+      </p>
+      </li>
+    <li><a href="#">DESTRUCTORING</a>
+      <p>
+        // You can assign multiple values on one line<br>
+        <br>
+        var randVals = {x: 1, y: 2, z: 3};<br>
+        var {x, y, z} = randVals;<br>
+        <br>
+        document.write(x + y + z + "<br />");<br>
+        <br>
+        // Do the same with arrays<br>
+        [x, y, z] = [z, y, x];<br>
+        document.write("Switch : " + x + y + z + "<br />");<br>
+      </p>
+      </li>
+    <li><a href="#">TEMPLATE STRINGS</a>
+      <p>
+        // Create multiline strings<br>
+        var multStr = `I go on for<br>
+        many lines<br />`;<br>
+        document.write(multStr);<br>
+        <br>
+        // You can use string interpolation<br>
+        document.write(`<b>${multStr}</b>`);<br>
+        <br>
+        // ---------- SPREAD OPERATOR ----------<br>
+        // We can separate values in an array into<br>
+        // attributs in a function<br>
+        <br>
+        function theSum(x, y, z): void{<br>
+        document.write("Sum : " + (x + y + z) + "<br />");<br>
+        }<br>
+        <br>
+        var args = [4, 5, 6];<br>
+        <br>
+        theSum(...args);<br>
+      </p>
+      </li>
+    <li><a href="#">ENUMS</a>
+      <p>
+        // Enums are number based in TS<br>
+        <br>
+        enum Emotion {<br>
+        Happy = 1,<br>
+        Sad,<br>
+        Angry<br>
+        };<br>
+        <br>
+        var myFeeling = Emotion.Happy;<br>
+        <br>
+        // Same as<br>
+        <br>
+        myFeeling = 1;<br>
+      </p>
+      </li>
+  </ul>
+
 </div>
+
+<script>
+  function myFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+      a = li[i].getElementsByTagName("a")[0];
+      if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+
+      }
+    }
+  }
+</script>
 </body>
 </html>
