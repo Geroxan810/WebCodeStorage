@@ -32,11 +32,29 @@
             display: block;
             max-width: 350px;
         }
+      menu {
+        position: fixed;
+        right: 10px;
+        border: 5px solid #ac2925;
+        padding: 5px;
+        width: 200px;
+      }
     </style>
 </head>
 <body>
 <div class="container">
+    <menu>
+      <ul>
+        <h3>Menu</h3>
+        <li><a href="#Route">Route</a></li>
+        <li><a href="#Query">Query DB</a></li>
+        <li><a href="#Route"></a></li>
+        <li><a href="#Route"></a></li>
+      </ul>
+    </menu>
     <h1 style="text-align: center">Node.js and Express.js</h1>
+    <br>
+    <h4>To generate start project use Webstrom Node.js Express application + LESS</h4>
     <img src="screen-directory.JPG"/>
     <p><strong>bin</strong> = dir with server</p>
     <p><strong>node_modules</strong> = dir with install node modules - E.g. Express,...</p>
@@ -45,9 +63,9 @@
     <p><strong>views</strong> = dir with E.g. Jade file, HTML,...</p>
     <p><strong>app.js</strong> = Express</p>
     <p><strong>npm-debug.log</strong> = not important</p>
-    <p><strong>package.json</strong> = dependency</p>
+    <p><strong><a href="file/package.json">package.json</a></strong> = dependency</p>
     <hr>
-    <h2>Route</h2>
+    <h2 id="Route">Route</h2>
     <p>in <span class="file">app.js</span> define: <br><br>
        <code>
         var page = require('./routes/page'); <br><br>
@@ -84,6 +102,42 @@
             }); <br>
         </code>
     </p>
+  <hr>
+  <h2 id="Query">Query across db - use mongoose</h2>
+  <p>1) First must define Schema in directory models and file with name posts.js</p>
+  <p>posts.js:</p>
+  <code>
+    var mongoose = require('mongoose');<br>
+    var Schema = mongoose.Schema;<br>
+<br>
+    var postSchema = new Schema({<br>
+    title: String,<br>
+    episode_number: String,<br>
+    main_characters: Array,<br>
+    description: String<br>
+    },{collection: 'blog'});<br>
+<br>
+    module.exports = mongoose.model('blog', postSchema);<br>
+  </code>
+  <br>
+  <p>2)In directory routes in for example in index.js  -  find function</p>
+  <p>index.js:</p>
+  <code>
+    var express = require('express');<br>
+    var router = express.Router();<br>
+    var posts = require('../models/Post.js');<br>
+    var mongoose = require('mongoose');<br>
+<br>
+    /* GET home page. */<br>
+    router.get('/', function(req, res, next) {<br>
+    posts.find({}, function (err, data) {<br>
+    res.render('index', { title: 'Star Wars', data: data });<br>
+    });<br>
+    });<br>
+<br>
+    module.exports = router;<br>
+  </code>
+
 </div>
 </body>
 </html>
