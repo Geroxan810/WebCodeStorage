@@ -81,7 +81,7 @@ body{
 .card .wrap {
   padding: 10px;
 }
-.card .wrap img {
+img {
   max-width: 100%;
 }
 .section-wrap {
