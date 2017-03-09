@@ -5,12 +5,6 @@
   <link rel="stylesheet" href="../../bootstrap-3.3.6-dist/css/bootstrap.min.css">
   <meta charset="utf-8">
   <style>
-    .nav {
-      width: 200px;
-      position: fixed;
-      right: 15px;
-      top: 15px;
-    }
     .code {
       background: #3c3c3c;
       padding: 10px;
@@ -19,11 +13,7 @@
 </head>
 <body>
 <h1><a href="./typescript/index.html">Typescript</a></h1>
-<ul class="nav nav-pills nav-stacked">
-  <li role="presentation"><a href="#start">Getting started</a></li>
-  <li role="presentation"><a href="#"></a></li>
-  <li role="presentation"><a href="#"></a></li>
-</ul>
+
   <div class="container">
     <h1 id="start">Getting started new project in Angular</h1>
     <div class="code">
@@ -34,7 +24,31 @@
         npm start<br>
       </code>
     </div>
+    <h1>Angular 2 router</h1>
+    <h3>app.router.ts</h3>
+    <div class="code">
+      <code>
+        import { ModuleWithProviders } from '@angular/core';<br>
+        import { Routes, RouterModule } from '@angular/router';<br>
+<br>
+<br>
+        /* import other component */<br>
+        import { AppComponent } from './app.component';<br>
+<br>
+        export const router: Routes = [<br>
+        {path: '', redirectTo: 'AppComponent', pathMatch: 'full'},<br>
+        {path: 'search', component: AppComponent },<br>
+        ];<br>
+<br>
+        export const routes: ModuleWithProviders = RouterModule.forRoot(router) ;<br>
 
+      </code>
+    </div>
+    <p>don't forget to add:</p>
+    <ol>
+      <li>import { routes } from './app.router'; to app.module.ts + 'routes' to imports</li>
+      <li>change path in </li>
+    </ol>
   </div>
 
 </body>
