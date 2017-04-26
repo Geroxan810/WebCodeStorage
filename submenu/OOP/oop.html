@@ -27,43 +27,72 @@
 
         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
         <ul id="myUL">
-            <li><a href="#class">
-                class - PHP
-            </a></li>
-            <li><a href=""></a></li>
+            <li><a href="#class">class</a></li>
+            <li><a href="#Inheritance">Inheritance</a></li>
             <li><a href=""></a></li>
             <li><a href=""></a></li>
         </ul>
+        <div class="wrap">
         <h2 id="class">Class</h2>
-        <h4>PHP</h4>
-        <code>
-            <span class="comment">// The code below creates the class<br></span>
-            class Person {<br>
-            <span class="comment">// Creating some properties (variables tied to an object)<br></span>
-            &nbsp public $isAlive = true;<br>
-            &nbsp public $firstname;<br>
-            &nbsp public $lastname;<br>
-            &nbsp public $age;<br>
+                <h4>PHP</h4>
+                <code>
+                    <span class="comment">// The code below creates the class<br></span>
+                    class Person {<br>
+                    <span class="comment">// Creating some properties (variables tied to an object)<br></span>
+                    &nbsp public $isAlive = true;<br>
+                    &nbsp public $firstname;<br>
+                    &nbsp public $lastname;<br>
+                    &nbsp public $age;<br>
+                     <br>
+                    <span class="comment">&nbsp&nbsp // Assigning the values<br></span>
+                    &nbsp&nbsp public function __construct($firstname, $lastname, $age) {<br>
+                    &nbsp&nbsp&nbsp $this->firstname = $firstname;<br>
+                    &nbsp&nbsp&nbsp $this->lastname = $lastname;<br>
+                    &nbsp&nbsp&nbsp $this->age = $age;<br>
+                    &nbsp&nbsp}<br>
+                      <br>
+                    <span class="comment">// Creating a method (function tied to an object)<br></span>
+                   &nbsp&nbsp public function greet() {<br>
+                   &nbsp&nbsp &nbsp return "Hello, my name is " . $this->firstname . " " . $this->lastname . ". Nice to meet you! :-)";<br>
+                    &nbsp&nbsp&nbsp}<br>
+                    &nbsp&nbsp}<br>
+                     <br>
+                    <span class="comment">// Creating a new person called "boring 12345", who is 12345 years old ;-)<br></span>
+                    $me = new Person('boring', '12345', 12345);<br>
+                     <br>
+                    <span class="comment">// Printing out, what the greet method returns<br></span>
+                    echo $me->greet();<br>
+                </code>
+        </div>
+        <div class="wrap">
+            <h2 id="Inheritance">Inheritance</h2>
+            <h4>PHP</h4>
+            <code>
+                class Foo {<br>
+                &nbsp public function printItem($string) {<br>
+                &nbsp &nbsp echo 'Foo: ' . $string . PHP_EOL;<br>
+                &nbsp }<br>
 <br>
-            <span class="comment">&nbsp&nbsp // Assigning the values<br></span>
-            &nbsp&nbsp public function __construct($firstname, $lastname, $age) {<br>
-            &nbsp&nbsp&nbsp $this->firstname = $firstname;<br>
-            &nbsp&nbsp&nbsp $this->lastname = $lastname;<br>
-            &nbsp&nbsp&nbsp $this->age = $age;<br>
-            &nbsp&nbsp}<br>
+                &nbsp public function printPHP() {<br>
+                &nbsp &nbspecho 'PHP is great.' . PHP_EOL;<br>
+                &nbsp &nbsp}<br>
+                &nbsp }<br>
 <br>
-            <span class="comment">// Creating a method (function tied to an object)<br></span>
-           &nbsp&nbsp public function greet() {<br>
-           &nbsp&nbsp &nbsp return "Hello, my name is " . $this->firstname . " " . $this->lastname . ". Nice to meet you! :-)";<br>
-            &nbsp&nbsp&nbsp}<br>
-            &nbsp&nbsp}<br>
-<br>
-            <span class="comment">// Creating a new person called "boring 12345", who is 12345 years old ;-)<br></span>
-            $me = new Person('boring', '12345', 12345);<br>
-<br>
-            <span class="comment">// Printing out, what the greet method returns<br></span>
-            echo $me->greet();<br>
-        </code>
+                &nbsp <span class="comment">// new class Bar extend old class Foo and replace function with same name with new value</span> <br>
+                &nbsp class Bar extends Foo {<br>
+                &nbsp &nbsp public function printItem($string) {<br>
+                &nbsp &nbsp echo 'Bar: ' . $string . PHP_EOL;<br>
+                &nbsp &nbsp }<br>
+                &nbsp }<br>
+                <br>
+                $foo = new Foo();<br>
+                $bar = new Bar();<br>
+                $foo->printItem('baz'); <span class="comment">// Output: 'Foo: baz'</span><br>
+                $foo->printPHP();       <span class="comment">// Output: 'PHP is great'</span><br>
+                $bar->printItem('baz'); <span class="comment">// Output: 'Bar: baz'</span><br>
+                $bar->printPHP();       <span class="comment">// Output: 'PHP is great'</span><br>
+            </code>
+        </div>
     </div>
 </body>
 <script>
