@@ -29,7 +29,7 @@
         <ul id="myUL">
             <li><a href="#class">class</a></li>
             <li><a href="#Inheritance">Inheritance</a></li>
-            <li><a href=""></a></li>
+            <li><a href="#Static">Static</a></li>
             <li><a href=""></a></li>
         </ul>
         <div class="wrap">
@@ -91,6 +91,34 @@
                 $foo->printPHP();       <span class="comment">// Output: 'PHP is great'</span><br>
                 $bar->printItem('baz'); <span class="comment">// Output: 'Bar: baz'</span><br>
                 $bar->printPHP();       <span class="comment">// Output: 'PHP is great'</span><br>
+            </code>
+        </div>
+        <div class="wrap">
+            <h2 id="Static">Static</h2>
+            <h4>TypeScript</h4>
+            <code>
+                class FooBase {<br>
+                &nbsp &nbsp public x: number;<br>
+                &nbsp &nbsp private y: number;<br>
+                &nbsp &nbsp protected z: number;<br>
+                &nbsp }<br>
+<br>
+                &nbsp <span class="comment">// EFFECT ON INSTANCES</span><br>
+                &nbsp var foo = new FooBase();<br>
+                &nbsp foo.x; <span class="comment">// okay</span><br>
+                &nbsp foo.y; <span class="comment">// ERROR : private</span><br>
+                &nbsp foo.z; <span class="comment">// ERROR : protected</span><br>
+<br>
+                <span class="comment">// EFFECT ON CHILD CLASSES</span><br>
+                class FooChild extends FooBase {<br>
+                &nbsp constructor() {<br>
+                &nbsp &nbsp super();<br>
+                &nbsp &nbsp this.x; <span class="comment">// okay</span><br>
+                &nbsp &nbsp this.y; <span class="comment">// ERROR: private</span><br>
+                &nbsp &nbsp this.z; <span class="comment">// okay</span><br>
+                &nbsp }<br>
+                }<br>
+                <img src="classCL.jpg" alt="class Static table" class="img-responsive">
             </code>
         </div>
     </div>
