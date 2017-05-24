@@ -45,9 +45,23 @@
       </p>
     </li>
     <li>
-      <a href=""></a>
+      <a href="">detect IE</a>
       <p>
-
+        <p class="alert-warning">Required Jquery</p>
+        <code>
+          function msieversion() {<br>
+          var ua = window.navigator.userAgent;<br>
+          var msie = ua.indexOf("MSIE ");<br>
+          if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))<br>
+          {<br>
+          $(".findYourOwnClass").each(function() {<br>
+          $( this ).addClass("thisClassIsOnlyForIE");<br>
+          });<br>
+          <br>
+          } return false;<br>
+          }<br>
+          msieversion();<br>
+        </code>
       </p>
     </li>
     <li>

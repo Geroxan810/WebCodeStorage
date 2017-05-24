@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Firebase</title>
+    <link rel="stylesheet" href="../../bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../bootstrap-3.3.6-dist/css/bootstrap-theme.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <style>
+        code {
+            display: block;
+        }
+        .comment {
+            color: #8a8a8a;
+        }
+        .highlight {
+            background: yellow;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center"><a href="https://console.firebase.google.com/">Firebase</a></h1>
+        <h3>Init</h3>
+        <ul>
+            <li>Button - Add Firebase to your web app</li>
+            <li>Copy code</li>
+        </ul>
+        <h3>Write data</h3>
+        <code>
+            <span class="comment">//find element in DOM</span><br>
+            var mainText = document.getElementById("mainText");<br>
+            var submitBtn = document.getElementById("submitBtn");<br>
+            <br><br>
+            <span class="comment">//init DB</span><br>
+            var database = firebase.database();<br>
+            <br><br>
+            function submitText() {<br>
+            	&nbsp;var firebaseRef = firebase.database().ref();<br>
+            	&nbsp;var messageText = mainText.value;<br>
+                &nbsp;<span class="comment">//find and replace key "Text" to value from messageText</span><br>
+            	&nbsp;<p class="highlight">firebaseRef.child("Text").set(messageText);</p><br>
+            }<br>
+            <br><br>
+            <p class="comment">//create new key with rand id and add messageText to this key</p>
+            function submitText() {<br>
+            var firebaseRef = firebase.database().ref();<br>
+            var messageText = mainText.value;<br>
+            <p class="highlight">firebaseRef.push().set(messageText);</p><br>
+            }<br>
+        </code>
+        <h3>Retrieve data</h3>
+        <code>
+            var fireHeading = document.getElementById("name");<br>
+<br>
+            <span class="highlight">var firebaseHeadingRef = firebase.database().ref().child("Heading");</span><br>
+<br>
+            <span class="highlight">
+            firebaseHeadingRef.on('value', function (datasnapshot) {<br>
+            fireHeading.innerText = datasnapshot.val();<br>
+            });</span><br>
+        </code>
+    </div>
+</body>
+</html>
