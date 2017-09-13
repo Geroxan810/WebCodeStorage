@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt - documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="../jquery-2.2.4.min.js" async></script>
+    <link rel="stylesheet" href="../bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../style.css" media="screen" title="no title">
+    <script src="../bootstrap-3.3.6-dist/js/bootstrap.min.js" async></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6">
+            <a href="#node" class="text-center"><h2>node</h2></a>
+            <div id="node">
+                <ul>
+                    <li><a href=""></a></li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur atque impedit iste iure labore molestias nihil non, pariatur quam qui quidem quis quos sequi sit soluta tempora tenetur totam.</p>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <a href="#ejs" class="text-center"><h2>ejs</h2></a>
+            <div id="ejs">
+                <ul>
+                    <li><a href="#ejs-helper">add ejc helper (function) to template</a></li>
+                </ul>
+                <div id="ejs-helper">
+                    <p>
+                        <h4>add helper to template</h4>
+                        &lt;% include ../../ejs-helper/hello.ejs %&gt;<br>
+                        &lt;h1&gt;&lt;%= say_hello("beautiful") %&gt;&lt;/h1&gt;
+                    </p>
+                    <p>
+                        <h5 class="alert-warning">hello.ejs</h5>
+                        &lt;%<br>
+                        say_hello = function (name) {<br>
+                        return 'Hello, ' + name;<br>
+                        }<br>
+                        %&gt;<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
